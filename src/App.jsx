@@ -3,7 +3,6 @@ import "./App.css";
 import Body from "./components/Body";
 import Login from "./components/Login/Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ConditionalRedirect from "./components/ConditionalRedirect";
 
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -14,12 +13,19 @@ function App() {
     setIsLoggedIn(true);
   };
 
+  const logOutHandler = function () {
+    setIsLoggedIn(true);
+  };
+
   return (
     <>
       <Router>
-        <ConditionalRedirect condition={!isLoggedIn} to="/login" />
         <Routes>
-          <Route exact="true" path="/" element={<Body />} />
+          <Route
+            exact="true"
+            path="/"
+            element={<Body logedIn={isLoggedIn} logOut={logOutHandler} />}
+          />
 
           <Route path="/login" element={<Login login={loginHandler} />} />
         </Routes>

@@ -1,5 +1,4 @@
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import Image from "./Image";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
