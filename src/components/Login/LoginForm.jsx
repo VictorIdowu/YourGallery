@@ -69,6 +69,7 @@ const LoginForm = (props) => {
           type="email"
           className="input"
           placeholder="user@example.com"
+          required
         />
       </label>
       <label htmlFor="password" className="label">
@@ -79,16 +80,17 @@ const LoginForm = (props) => {
           type="password"
           className="input"
           placeholder="•••••••••"
+          required
         />
       </label>
-      <aside className="w-full transition-all duration-300">
+      <aside className="w-full transition-all duration-300 shadow-2xl shadow-primary-200 rounded-md overflow-hidden">
         {!buttonLoader && (
-          <button className="bg-secondary-100 hover:bg-secondary-200 text-center text-primary-300 w-full rounded-md py-2 sm:py-3 md:py-6 text-sm sm:text-lg md:text-xl transition-colors duration-500">
+          <button className="bg-secondary-100  text-center text-primary-300 w-full  py-2 sm:py-3 md:py-6 text-sm sm:text-lg md:text-xl hover:bg-secondary-200 transition-colors  duration-500">
             Log In
           </button>
         )}
         {buttonLoader && (
-          <button className="bg-secondary-200 text-center text-primary-300 w-full rounded-md py-2 sm:py-3 md:py-6 text-lg sm:text-xl md:text-2xl ">
+          <button className="bg-secondary-200 text-center text-primary-300 w-full  py-2 sm:py-3 md:py-6 text-lg sm:text-xl md:text-2xl ">
             <Icon
               icon="mingcute:loading-line"
               className="w-full animate-spin"

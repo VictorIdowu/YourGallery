@@ -48,7 +48,7 @@ const SearchandUpload = ({ items }) => {
   return (
     <section className="mt-14 sm:mt-16 md:mt-32 flex flex-col gap-3 sm:gap-10 md:gap-14">
       <aside className="flex gap-2 md:gap-6 sm:px-5 md:p-0 ">
-        <button className="text-primary-300 bg-secondary-100 text-sm sm:text-base md:text-xl px-2 sm:px-4 md:px-8 rounded-md flex items-center gap-1">
+        <button className="text-primary-300  text-sm sm:text-base md:text-xl px-2 sm:px-4 md:px-8 rounded-md flex items-center gap-1 bg-secondary-100 hover:bg-secondary-200 transition-colors  duration-500">
           Upload
           <Icon icon="humbleicons:upload" className="text-xl" />
         </button>
