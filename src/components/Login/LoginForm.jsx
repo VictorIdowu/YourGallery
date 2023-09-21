@@ -53,7 +53,7 @@ const LoginForm = (props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 md:gap-12 items-center backdrop-blur-2xl backdrop-hue-rotate-180 backdrop-saturate-200 z-40 px-5 py-8 w-64 sm:w-1/2 lg:w-5/12 rounded-xl"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 md:gap-12 items-center shadow-xl shadow-primary-200  bg-primary-300  z-40 px-5 py-8 w-64 sm:w-1/2 lg:w-5/12 rounded-xl"
     >
       <h3 className="flex items-center justify-between text-secondary-100 font-semibold text-sm sm:text-lg md:text-xl w-full">
         Welcome Back

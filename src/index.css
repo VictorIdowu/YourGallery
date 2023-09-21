@@ -20,5 +20,5 @@ body {
 }
 
 .input {
-  @apply w-full h-8 sm:h-12 md:h-16 rounded-md placeholder:text-xs sm:placeholder:text-sm md:placeholder:text-base placeholder:text-primary-200 placeholder:font-thin focus:outline-none bg-primary-300 focus:bg-primary-300 pl-2;
+  @apply w-full h-8 sm:h-12 md:h-16 rounded-md placeholder:text-xs sm:placeholder:text-sm md:placeholder:text-base placeholder:text-primary-200 placeholder:font-thin focus:outline-none bg-primary-300 focus:bg-primary-300 pl-2 shadow-2xl shadow-primary-200;
 }
