@@ -5,15 +5,13 @@ import "aos/dist/aos.css";
 import Skeleton from "react-loading-skeleton";
 import { Draggable } from "react-beautiful-dnd";
 
-const DragDrop = ({ items }) => {
-  const [galItems, setGalItems] = useState(items);
+const DragDrop = (props) => {
+  const [galItems, setGalItems] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  //  Loading If item is Empty
   useEffect(() => {
-    items.length === 0 ? setLoading(true) : setLoading(false);
-  }, [items]);
+    setGalItems(props.items);
+  }, [props]);
 
   useEffect(() => {
     AOS.init(); // Initialize AOS on component mount
@@ -72,7 +70,7 @@ const DragDrop = ({ items }) => {
               data-aos="fade-up"
               className="grid gap-3 gap-x-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 overflow-hidden items-stretch"
             >
-              {galItems.map((item, i) => (
+              {galItems?.map((item, i) => (
                 <Draggable draggableId={`${i + 1}`} key={i + 1} index={i}>
                   {(provided, snapshot) => (
                     <div
@@ -85,15 +83,16 @@ const DragDrop = ({ items }) => {
                           : ""
                       }`}
                     >
-                      {loading ? (
+                      {props.loading && (
                         <Skeleton className="w-full h-60 shadow-2xl shadow-primary-200" />
-                      ) : (
+                      )}
+                      {!props.loading && (
                         <img
                           data-testid="gallery-image"
                           data-aos="flip-left"
                           className={`ease-in-out duration-75 w-full h-60 cursor-grab object-cover rounded-xl`}
-                          src={item.url}
-                          alt={item.tags.join("")}
+                          src={item.webformatURL}
+                          alt={item.tags.split(",").join(" ")}
                         />
                       )}
                     </div>

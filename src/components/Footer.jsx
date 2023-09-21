@@ -7,7 +7,7 @@ const Footer = () => {
         <li>Terms //</li>
         <li>Home</li>
       </ul>
-      <p>HNGx Stage-3 task: Photos from Google & Unsplash</p>
+      <p>HNGx Stage-3 task: images from Pixabay</p>
     </footer>
   );
 };

@@ -1,13 +1,15 @@
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import DragDrop from "./DragDrop";
+import FetchData from "./FetchData";
 
-const SearchandUpload = ({ items }) => {
+const SearchandUpload = () => {
   const [searchItems, setSearchItems] = useState([]);
   const [displaySearch, setDisplaySearch] = useState(false);
   const [inputVal, setInputVal] = useState("");
   const [clear, setClear] = useState(false);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setDisplaySearch(false);
@@ -15,18 +17,17 @@ const SearchandUpload = ({ items }) => {
 
     searchHandler(inputVal);
 
-    setTimeout(() => {
-      setDisplaySearch(true);
-    }, 100);
+    // setTimeout(() => {
+    // }, 100);
   }, [inputVal]);
 
   const searchHandler = async function (input) {
     try {
+      setLoading(true);
+      setDisplaySearch(true);
       const query = input.toLowerCase();
 
-      const images = await items.filter((img) => {
-        return img.tags.some((tag) => tag.toLowerCase().includes(query));
-      });
+      const images = await FetchData(query);
 
       if (images.length === 0) {
         setSearchItems([]);
@@ -34,7 +35,8 @@ const SearchandUpload = ({ items }) => {
       }
 
       setError(false);
-      return setSearchItems(images);
+      setSearchItems(images);
+      setLoading(false);
     } catch (err) {
       setError(true);
     }
@@ -86,7 +88,7 @@ const SearchandUpload = ({ items }) => {
         </aside>
       )}
 
-      {displaySearch && <DragDrop items={searchItems} />}
+      {displaySearch && <DragDrop items={searchItems} loading={loading} />}
     </section>
   );
 };
