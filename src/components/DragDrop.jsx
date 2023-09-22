@@ -37,7 +37,7 @@ const DragDrop = (props) => {
 
   //  DragDrop Function
   const handleDragDrop = function (results) {
-    const { source, destination, type } = results;
+    const { source, destination } = results;
 
     if (!destination) return;
 

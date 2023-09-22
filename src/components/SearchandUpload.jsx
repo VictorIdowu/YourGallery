@@ -16,9 +16,6 @@ const SearchandUpload = () => {
     if (inputVal.length === 0) return;
 
     searchHandler(inputVal);
-
-    // setTimeout(() => {
-    // }, 100);
   }, [inputVal]);
 
   const searchHandler = async function (input) {
@@ -48,7 +45,7 @@ const SearchandUpload = () => {
   };
 
   return (
-    <section className="mt-14 sm:mt-16 md:mt-32 flex flex-col gap-3 sm:gap-10 md:gap-14">
+    <section className="mt-14 sm:mt-16 md:mt-32 flex flex-col gap-3 sm:gap-10 md:gap-14 overflow-hidden">
       <aside className="flex gap-2 md:gap-6 sm:px-5 md:p-0 ">
         <button className="text-primary-300  text-sm sm:text-base md:text-xl px-2 sm:px-4 md:px-8 rounded-md flex items-center gap-1 bg-secondary-100 hover:bg-secondary-200 transition-colors  duration-500">
           Upload
