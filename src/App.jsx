@@ -22,7 +22,6 @@ function App() {
       <Router>
         <Routes>
           <Route
-            exact="true"
             path="/"
             element={<Body logedIn={isLoggedIn} logOut={logOutHandler} />}
           />
